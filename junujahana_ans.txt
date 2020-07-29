@@ -1,0 +1,56 @@
+
+// C++ program to find out if a string is a palindrome. (The string may contain spaces as well as special characters. The program should ignore the special characters and determine whether the string is a palindrome or not)
+
+
+
+#include <iostream> 
+using namespace std; 
+   
+// To check string is palindrome or not 
+bool Palindrome_Check(string str) 
+{ 
+    int l = 0, h = str.length(); 
+   
+    // Lowercase string 
+    for (int i = 0; i < h; i++) 
+        str[i] = tolower(str[i]); 
+   
+    // Compares character until they are equal 
+    while (l <= h) { 
+   
+        // If there is another symbol in left of string 
+        if (!(str[l] >= 'a' && str[l] <= 'z')) 
+            l++; 
+   
+        // If there is another symbol in right of string 
+        else if (!(str[h] >= 'a' && str[h] <= 'z')) 
+            h--; 
+   
+        // If characters are equal 
+        else if (str[l] == str[h]) 
+            l++, h--; 
+   
+        // If characters are not equal then string is not palindrome 
+        else
+            return false; 
+    } 
+   
+    // Returns true if string is palindrome 
+    return true; 
+} 
+   
+// sample program to Palindrome_Check() 
+
+int main() 
+{ 
+    string str = "m ad..am"; 
+   
+    if (Palindrome_Check(str)) 
+        cout << "String is palindrome."; 
+    else
+        cout << "String is not palindrome."; 
+   
+    return 0; 
+} 
+
+

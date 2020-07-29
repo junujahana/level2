@@ -1,0 +1,42 @@
+2.//Accept a String input
+// Accept a String of valid chars
+// Remove all the characters that are not present in the valid chars from the input string
+// Print the cleansed String and the count of characters removed
+
+
+#include <iostream>
+#include<string>
+ 
+int main()
+{
+int count=0;
+int c=0;
+string str1;
+getline(cin,str1); //get string input as str1
+string str2;
+getline(cin,str2); //get valid string input as str2
+string str3;
+string str4;
+for(i=str1.begin();i!=str1.end();i++)
+{
+ for(j=str2.begin();j!=str2.end();j++)
+ {
+ if(*i==*j)
+ count++;
+ }
+if(count==1)
+str3+=*i;
+else
+str4+=*i;
+}
+cout<<str3<<"\n";
+for(i1=str4.begin();i1!=str4.end();i1++)
+{
+ for(j1=str4.begin();j1!=str4.end();j1++)
+ {
+ if(*i1==*j1)
+ c++;
+ }
+ std::cout<<c<<" "<<*i1<<"was removed\n";
+}
+}
